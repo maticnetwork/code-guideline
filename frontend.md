@@ -6,30 +6,9 @@ frontend guidelines
 
 * [Vue](vue.md)
 
-## Naming
-
-* variable should be in camelCase
-* global constant variables like configuration etc should be in CAPITAL_SNAKE_CASE 
-* Class name must be in PascalCase
-* Class member must be in camelCase
-
-```
-class Person {
-    name:string;
-
-    constructor(name){
-        this.name = name;
-    }
-
-    sayMyName(){
-        const message = `your name is ${this.name}`; 
-    }
-}
-```
-
 ### Component
 
-* A component should be loose coupled or no coupled. So that it can work independently.
+* A component should be loose coupled or no coupled. So that it can work independently. This also allows us to test components.
 * All dependencies should be passed using props except some states which are global like logged in user id, is authenticated etc.
 * Always use store - you will end up using tomorrow, so it's better to start with store. 
 
@@ -91,16 +70,11 @@ Store contains states and it uses service layer to get the data and then store i
 
 Service layer is responsible for calling API. It is independent layer and most of the function is pure i.e it receives arguments, call apis and return the result.
 
-### Component <-> Store
+So summarizing the layers communication - 
 
-Component should communicate to Store and viceversa.
-
-### Store -> Service
-
-Store should communicate to service layer and store the results in states. All Service call should be implemented in store actions.
-
-All service call should be made from actions, nothing from Component. So component know only stores, it doesn't need to know the service layer.
-
+```
+Component -> <- Store -> Service
+```
 
 ## Error Handling
 

@@ -7,6 +7,7 @@
 * Class **public or protect member** should be in camelCase.
 * Class **private member** should be in camelCase having '_' in the end.
 * A file name should be in snake case.
+* global constant variables like configuration etc should be in CAPITAL_SNAKE_CASE 
 
 ```
 class Person {

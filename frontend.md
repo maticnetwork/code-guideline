@@ -27,47 +27,6 @@ class Person {
 }
 ```
 
-## File
-
-files should be named in snake_case
-
-```
-person.ts
-deposit_exporer.ts
-withdraw_explorer.ts
-```
-
-## Modules
-
-Try to create a modules for every functionality, even if it is small. And import that module everywhere instead of a particular file.
-
-e.g - Consider we have to create util methods
-
-1. isEmpty
-2. isObject
-
-we created two files is_empty.js & is_object inside utils folder.
-
-now users can use it this way - 
-
-```
-import {isEmpty} from "./utils/is_empty";
-```
-
-or we can create a module of all the methods inside utils and user will have to import only utils folder.
-
-create a folder index.js inside utils folder and export all methods like this
-
-```
-export * from "./is_empty";
-export * from "./is_object";
-```
-and then users will use like this - 
-
-```
-import {isObject} from "./utils";
-```
-
 ### Component
 
 * A component should be loose coupled or no coupled. So that it can work independently.

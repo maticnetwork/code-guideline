@@ -2,8 +2,10 @@
 
 Coding guidelines for different language & technology.
 
-> It is very necessary to have some standard coding guidelines or standard, so that every dev in an organisation writes same kind of code. 
+> The coding guidelines helps us to make sure - every dev in an organisation writes same kind of code. 
 
+We have documented following guidelines - 
 
+* [Javascript](javascript.md)
 * [FrontEnd](frontend.md)
 

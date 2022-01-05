@@ -1,0 +1,26 @@
+# FrontEnd Security
+
+There are multiple attacks which can be done from security which might affect the targetted user or might affect the whole server. The guideline aims to list the problem and solution for the different attacks.
+
+## 1. Iframe click attack
+
+Using this attack, an attacker can inject an iframe. The iframe can be used for getting clicked by user and doing some action.
+
+Solution -  use `content-security-policy` or `x-frame-option` header
+
+## 2. Cookie size overloading 
+
+Imagine a script is injected in your UI because of vulnebarility. e.g - your UI takes a url as input and execute the code from url.
+The script modifies the cookies and add so many cookie which will be sent to server. The server is not able to process the cookie because of size and thus server won't give valid output for that user.
+
+Solution- use `content-security-policy`
+
+## 3. Setting a cookie
+
+Setting a cookie should not be allowed in ui, as it's meant for only server to identify the particular user or session
+
+Solution - write this code in index.html page of spa or if you are using backend rendering then add to the base layout
+
+```
+document.__defineSetter__("cookie", function(){return ""})
+```
